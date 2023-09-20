@@ -15,18 +15,13 @@ fn main() {
 
     let mut game_state = game::GameState::new();
     let mut accumulator = 0.0;
-    let mut input_accumulator = 0.0;
     let mut game_over_accumulator = 0.0;
     let update_rate = 1.0 / 2.0; // 2 times per second
-    let input_rate = 1.0 / 10.0; // 10 times per second
     let game_over_time = 2.0; // 2 seconds
 
     while !rl.window_should_close() {
         let elapsed_time = rl.get_frame_time();
         accumulator += elapsed_time;
-        input_accumulator += elapsed_time;
-
-        if input_accumulator >= input_rate {}
 
         if rl.is_key_down(KeyboardKey::KEY_LEFT) {
             game_state.move_piece(-1, 0);
