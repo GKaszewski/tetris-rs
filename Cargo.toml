@@ -1,0 +1,15 @@
+[package]
+name = "tetris-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Gabriel Kaszewski"]
+
+[dependencies]
+raylib = "3.7.0"
+rand = "0.8.5"
+
+[profile.release]
+lto = true
+opt-level = 'z'
+strip = true
+codegen-units = 1
